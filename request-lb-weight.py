@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Please note the COPYRIGHT file accompanying this script.
+# Please note the LICENSE file accompanying this script.
 # See https://github.com/reincubate/haproxy-dynamic-weight for more information.
 
 import os, socket, site, sys, memcache
