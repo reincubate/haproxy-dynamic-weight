@@ -6,7 +6,7 @@ Dynamically set server weights in haproxy based on load.
 ## Rationale
 
 `HAProxy` is a fine choice of load-balancer, but the balancing options it allows do not
-allow users to balance work across servers according to their load. `haproxy-dynamic-weight`
+including balancing work across servers according to their load. `haproxy-dynamic-weight`
 provides a way to dynamically and automatically allocate work across servers in proportion
 to their load to get the most from them.
 
@@ -71,8 +71,8 @@ Before building this script we sought to find a pre-existing solution. There are
 but none provided what we needed.
 
  * [Simple auto-scale with HAProxy](http://alex.cloudware.it/2011/10/simple-auto-scale-with-haproxy.html). This script is similar in that it can dynamically set HAProxy server weights. However:
- * * It deals with spinning servers up and down which is beyond what we needed (and complicates the analysis challenge).
- * * It determines server load by analysing a very small portion of the HAProxy logs. This is not a reliable dataset to analyse, as there are many reasons which might determine a server doing more or fewer requests (it being in multiple backends or fronts, the 15 log lines not being representative, it being loaded slightly more as a result of a balancer-based A/B test, it being in a sub-pool of servers dedicated to serving lighter requests.
- * * It requires partial duplicate of HAProxy config in a `SERVERS` varable. [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
+   * It deals with spinning servers up and down which is beyond what we needed (and complicates the analysis challenge).
+   * It determines server load by analysing a very small portion of the HAProxy logs. This is not a reliable dataset to analyse, as there are many reasons which might determine a server doing more or fewer requests: it being in multiple backends or frontends, the 15 log lines not being representative, it being loaded slightly more as a result of a balancer-based A/B test, it being in a sub-pool of servers dedicated to serving lighter requests.
+   * It requires partial duplicate of HAProxy config in a `SERVERS` varable. [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
  * [HAproxy Load Balancer Weight WatchDog](https://github.com/ssasso/lbwwd). A nice, simple Perl script. However:
  * * It relies on the load-balancer having to poll each server regularly, and each server making a load status page available. We did not want to do this.
