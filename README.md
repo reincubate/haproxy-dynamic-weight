@@ -1,7 +1,7 @@
 haproxy-dynamic-weight
 ======================
 
-Dynamically set server weights in haproxy based on load.
+Dynamically set server weights in `HAProxy` based on load.
 
 ## Rationale
 
