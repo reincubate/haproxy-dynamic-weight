@@ -75,4 +75,4 @@ but none provided what we needed.
    * It determines server load by analysing a very small portion of the HAProxy logs. This is not a reliable dataset to analyse, as there are many reasons which might determine a server doing more or fewer requests: it being in multiple backends or frontends, the 15 log lines not being representative, it being loaded slightly more as a result of a balancer-based A/B test, it being in a sub-pool of servers dedicated to serving lighter requests.
    * It requires partial duplicate of HAProxy config in a `SERVERS` varable. [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
  * [HAproxy Load Balancer Weight WatchDog](https://github.com/ssasso/lbwwd). A nice, simple Perl script. However:
- * * It relies on the load-balancer having to poll each server regularly, and each server making a load status page available. We did not want to do this.
+   * It relies on the load-balancer having to poll each server regularly, and each server making a load status page available. We did not want to do this.
